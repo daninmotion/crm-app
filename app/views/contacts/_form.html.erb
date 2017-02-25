@@ -1,0 +1,39 @@
+<%= form_for @contact do |f| %>
+	
+	<% if @contact.errors.any? %>
+		<h1>Please correct the following error(s):</h1>
+
+		<ul>
+			<% @contact.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div>
+		<p><%= f.label :name %></p>
+		<p><%= f.text_field :name %></p>
+	</div>
+
+	<div>
+		<p><%= f.label :email %></p>
+		<p><%= f.text_field :email %></p>
+	</div>
+
+	<div>
+		<p><%= f.label :phone %></p>
+		<p><%= f.text_field :phone %></p>
+	</div>
+
+	<div>
+		<p><%= f.label :address %></p>
+		<p><%= f.text_area :address %></p>
+	</div>
+
+	<p>
+		<%= f.submit %>
+	</p>
+	<p>
+		<%= link_to 'Cancel', contacts_path %>
+	</p>
+<% end %>
