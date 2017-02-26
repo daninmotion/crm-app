@@ -1,8 +1,16 @@
 class ContactsController < ApplicationController
-  before_action :find_contact, only: [:edit, :update, :destroy]
+  before_action :find_contact, only: [:show, :edit, :update, :destroy]
 
   def index
   	@contacts = Contact.paginate(:page => params[:page], :per_page => 2)
+  end
+
+  def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'contacts/report', pdf: 'Report'}
+    end
   end
 
   def new

@@ -58,3 +58,7 @@ gem 'tachyons-rails', '~> 4.6', '>= 4.6.2'
 #Paginate
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
+#HTML to PDF
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
